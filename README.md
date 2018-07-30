@@ -1,2 +1,0 @@
-# InfoStack
-A social network
