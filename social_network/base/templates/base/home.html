@@ -1,0 +1,76 @@
+{% extends 'public/header.html' %}
+    {% block title %}InfoStack{% endblock %}
+    {% block styleurl %}../../static/stylesheets/home.css{% endblock %}
+    {% block scripturl %}../../static/scripts/home.js{% endblock %}
+    {% block extrascripturl %}../../static/scripts/redirect.js{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="categories-container col s12 l6">
+            <div class="responsive-category" id='programming_ctg'>
+                <div class="category large-based grey lighten-3 hide-on-med-and-down">
+            <div class="category-title flow-text">Programming</div>
+            <div class="category-description">
+                This category is entirely related to programming. If you're ready to code, jump in!
+            </div>
+        </div>
+        <div class="category grey lighten-3 med-and-small-based hide-on-large-only">
+            <div class="category-title flow-text">Programming</div>
+            <div class="category-description">
+                This category is entirely related to programming. If you're ready to code, jump in!
+            </div>
+            <a href="/programming/topics" class="btn light-blue darken-4 hide-on-large-only z-depth-0">Jump in</a>
+        </div>
+            </div>
+            <div class="responsive-category" id='webdev_ctg'>
+                <div class="category large-based grey lighten-3 hide-on-med-and-down">
+            <div class="category-title flow-text">Web Development</div>
+            <div class="category-description">
+                Wanna learn how websites like InfoStack are made from the ground up?, 
+                or maybe you've got a problem to solve?
+            </div>
+        </div>
+        <div class="category grey lighten-3 med-and-small-based hide-on-large-only">
+            <div class="category-title flow-text">Web Development</div>
+            <div class="category-description">
+                Wanna learn how websites like InfoStack are made from the ground up?, 
+                or maybe you've got a problem to solve?
+            </div>
+            <a href="/web-development/topics" class="btn light-blue darken-4 hide-on-large-only z-depth-0">Jump in</a>
+        </div>
+            </div>
+            <div class="responsive-category" id='videogames_ctg'>
+                <div class="category large-based grey lighten-3 hide-on-med-and-down">
+            <div class="category-title flow-text">Video Games</div>
+            <div class="category-description">
+                Video games are vital in our everyday life, 
+                you're gonna find everything you need in this category.
+            </div>
+        </div>
+        <div class="category grey lighten-3 med-and-small-based hide-on-large-only">
+            <div class="category-title flow-text">Video Games</div>
+            <div class="category-description">
+                Video games are vital in our everyday life, don't you think so?
+            </div>
+            <a href="/video-games/topics" class="btn light-blue darken-4 hide-on-large-only z-depth-0">Jump in</a>
+        </div>
+            </div>
+            <div class="responsive-category" id='yourcategory_ctg'>
+                <div class="category large-based grey lighten-3 hide-on-med-and-down">
+            <div class="category-title flow-text">Anything Else</div>
+            <div class="category-description">
+                Got anything else to discuss?, anything to talk about, maybe it's personal or whatever.
+                feel free as this is your category!
+            </div>
+        </div>
+        <div class="category grey lighten-3 med-and-small-based hide-on-large-only">
+            <div class="category-title flow-text">Anything Else</div>
+            <div class="category-description">
+                Got anything else to discuss?, anything to talk about, maybe it's personal or whatever.
+                feel free as this is your category!
+            </div>
+            <a href="/yourcategory/topics" class="btn light-blue darken-4 hide-on-large-only z-depth-0">Jump in</a>
+        </div>
+            </div>
+    </div>
+    </div>
+{% endblock %}

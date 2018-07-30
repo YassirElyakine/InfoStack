@@ -1,0 +1,18 @@
+div.posts-container {
+    margin-top: 25px;
+    padding: 15px;
+}
+div.posts-container > div.post-container {
+    line-height: 2.5rem;
+}
+div.posts-container > .post-container > a.post-title {
+    display: block;
+    padding-left: 15px;
+    transition-duration: 100ms;
+    transition-property: color;
+    transition-timing-function: linear;
+}
+div.posts-container > .post-container > a.post-title:hover {
+    text-decoration: underline;
+    color: darkblue;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <title>{% block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- header.css file -->
+    <link rel='stylesheet' type='text/css' href='{% static "stylesheets/header.css" %}'>
+    <!-- guest stylesheet -->
+    <link rel='stylesheet' type='text/css' href='{% block styleurl %}{% endblock %}'>
+</head>
+<body>
+    <!-- navigation system -->
+    <nav class="nav-wrapper z-depth-0 light-blue darken-4">
+        <div class="container">
+            <a href="/" class="brand-logo">InfoStack<i class='material-icons logo-icon black-text'>all_inclusive</i></a>
+            <a href="" class='sidenav-trigger' data-target='mobile-friendly'><i class="material-icons">menu</i></a>
+        </div>
+        <ul class='right hide-on-med-and-down'>
+            {% if not request.user.is_authenticated %}
+            <li><a href="/account/login" class="btn transparent z-depth-0 my-nav-button">Login</a></li>
+            <li><a href="/account/register" class="btn transparent z-depth-0 my-nav-button">Register</a></li>
+            {% else %}
+            <li><a href="/account/logout" class="btn transparent z-depth-0 my-nav-button">Logout</a></li>
+            <li><a href="/account/profile" class="btn transparent z-depth-0 my-nav-button">Profile</a></li>
+            <li><a href="/newpost" class="btn transparent z-depth-0 my-nav-button">new post</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <ul class='sidenav' id='mobile-friendly'>
+        {% if not request.user.is_authenticated %}
+        <li><a href="/account/login">Login</a></li>
+        <li><a href="/account/register">Register</a></li>
+        {% else %}
+        <li><a href="/account/logout">Logout</a></li>
+        <li><a href="/account/profile">Profile</a></li>
+        <li><a href="/newpost">new post</a></li>
+        {% endif %}
+    </ul>
+    <!-- account = {{user}} -->
+    {% block content %}
+    {% endblock %}
+    <footer class='right-align hide-on-small-only'>
+        <i class="material-icons logo-icon right">all_inclusive</i>
+        <span>Infinity</span>
+    </footer>
+    <!-- Jquery -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- header.js file -->
+    <script src="{% static 'scripts/header.js' %}"></script>
+    <!-- guest scripts -->
+    <script src='{% block scripturl %}{% endblock %}'></script>
+    <script src='{% block extrascripturl %}{% endblock %}'></script>
+</body>
+</html>

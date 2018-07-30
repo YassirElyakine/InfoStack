@@ -1,0 +1,32 @@
+div.categories-container {
+    padding: 8px;
+    margin-top: 25px;
+}
+div.categories-container > div.responsive-category > div.category:not(.med-and-small-based) {
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #4F4F4F;
+    cursor: pointer;
+    transition: 100ms all linear;
+}
+div.categories-container > div.responsive-category > div.med-and-small-based {
+    padding: 15px;
+    margin-top: 10px;
+}
+div.categories-container > div.responsive-category > div.med-and-small-based > a.btn {
+    transition: 0s;
+}
+div.categories-container > div.responsive-category > div.category > div.category-description {
+    display: inline-block;
+}
+div.category-title {
+    display: inline-block;
+    padding: 5px;
+}
+a.hide-on-large-only {
+    width: 100%;
+    margin-top: 8px;
+}
+div.darken-3 > div {
+    color: #fff;
+}

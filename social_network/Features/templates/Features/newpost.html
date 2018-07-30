@@ -1,0 +1,31 @@
+{% extends 'public/header.html' %}
+{% block title %}new post-{{user}}{% endblock %}
+{% block styleurl %}../../static/stylesheets/newpost.css{% endblock %}
+{% block scripturl %}../../static/scripts/newpost.js{% endblock %}
+
+{% block content %}
+    {% if request.method == 'POST' %}
+    <div class="green white-text success_msg">
+        <span>{{success}}</span>
+        <i class="material-icons light-blue-text text-darken-4 left">done</i>
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="container">
+            <form action="/newpost/" method='POST'>
+                {% csrf_token %}
+            <div class="input-field">
+                <input type="text" name='title' required autofocus>
+                <label for="title">post title</label>
+            </div>
+            <textarea name="body" class="materialize-textarea" required></textarea>
+            <div class="btn light-blue darken-4 z-depth-0 category-select" id='programming' name='programming'>Programming</div>
+            <div class="btn light-blue darken-4 z-depth-0 category-select" id='webdev' name='webdev'>Web Development</div>
+            <div class="btn light-blue darken-4 z-depth-0 category-select" id='videogames' name='videogames'>Video Games</div>
+            <div class="btn light-blue darken-4 z-depth-0 category-select" id='else' name='else'>Else</div>
+            <input type="text" name='category' id='selected_category' readonly required>
+            <button class="btn post-button col s12 light-blue darken-4 z-depth-0" type='submit'>post</button>
+        </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'public/header.html' %}
+    {% block title %}login{% endblock %}
+    {% block styleurl %}../../static/stylesheets/login.css{% endblock %}
+    {% block scripturl %}../../static/scripts/login.js{% endblock %}
+{% block content %}
+<div class="row">
+        <form action="" method='POST' class='login_form'>
+            {% csrf_token %}
+            <div class="container">
+                <div class="input-field">
+                    {{form.username}}
+                    <label for="username">username</label>
+                </div>
+                <div class="input-field">
+                    {{form.password}}
+                    <label for="password">password</label>
+                </div>
+                <button class="btn light-blue darken-4 col s12 l12">Login</button>
+            </div>
+    </form>
+    </div>
+{% endblock %}

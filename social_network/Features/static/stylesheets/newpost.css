@@ -1,0 +1,17 @@
+div.row {
+    margin-top: 25px;
+}
+div.category-select, button.post-button {
+    transition: 0s;
+}
+button.post-button {
+    margin-top: 25px;
+}
+.success_msg {
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+    div.btn {
+        display: block;
+    }
+}

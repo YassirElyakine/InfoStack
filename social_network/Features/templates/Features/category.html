@@ -1,0 +1,18 @@
+{% extends 'public/header.html' %}
+{% block title %}{{category}}{% endblock %}
+{% block styleurl %}../../static/stylesheets/category.css{% endblock %}
+{% block scripturl %}../../static/scripts/category.js{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="posts-container grey lighten-5">
+            {% for post in posts %}
+            {% if post.category == category %}
+            <div class="post-container">
+                <a href="/{{post.category}}/topics/{{post.title}}" class="post-title">{{post.title}}</a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

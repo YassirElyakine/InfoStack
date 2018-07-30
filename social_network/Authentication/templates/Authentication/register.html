@@ -1,0 +1,26 @@
+{% extends 'public/header.html' %}
+    {% block title %}Register{% endblock %}
+    {% block styleurl %}../../static/stylesheets/register.css{% endblock %}
+    {% block scripturl %}../../static/scripts/register.js{% endblock %}
+{% block content %}
+    <div class="row">
+        <form action="/account/register/" method='POST' class='register_form'>
+            {% csrf_token %}
+            <div class="container">
+                <div class="input-field">
+                    {{form.username}}
+                    <label for="id_username" name='username'>username</label>
+                </div>
+                <div class="input-field">
+                    {{form.password1}}
+                    <label for="id_password1" name='password'>password</label>
+                </div>
+                <div class="input-field">
+                    {{form.password2}}
+                    <label for="id_password2" name='password_confirm'>password confirmation</label>
+                </div>
+                <button class="btn col s12 light-blue darken-4">Register</button>
+            </div>
+    </form>
+    </div>
+{% endblock %}
